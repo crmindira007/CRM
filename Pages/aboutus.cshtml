@@ -1,0 +1,94 @@
+﻿@page
+@model CRM.Pages.aboutusModel
+@{
+}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>🌟 Welcome to <span class="typing-text cursive"></span></h1>
+        <p style="color:white">We are revolutionizing CRM solutions for the future.</p>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content py-5">
+    <div class="container text-center" data-aos="fade-up">
+        <h2 class="display-4 fw-bold">Who We Are</h2>
+        <p class="lead mx-auto" style="max-width: 800px;">
+            We are dedicated to empowering businesses with cutting-edge CRM solutions, streamlining workflows,
+            and enhancing customer relationships.
+        </p>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team container">
+    <h2 data-aos="fade-up">Meet Our Team</h2>
+    <div class="row">
+        <div class="col-md-3" data-aos="zoom-in"><img src="~/img/handsome-man-isolated-white-background.jpg" alt="Team Member 1"><p>Mihir Jariwala</p></div>
+        <div class="col-md-3" data-aos="zoom-in"><img src="~/img/smiling-happy-businessman-looking-camera.jpg" alt="Team Member 2"><p>Ritesh Patil</p></div>
+        <div class="col-md-3" data-aos="zoom-in"><img src="~/img/man-isolated-showing-facial-emotions.jpg" alt="Team Member 3"><p>Yogesh Ghodak</p></div>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="features container text-center" data-aos="fade-up">
+    <h2 class="section-title">🚀 Elevate Your Business with <span class="cursive highlight">Next-Gen CRM</span></h2>
+    <div class="feature-box">🚀 Fast & Efficient</div>
+    <div class="feature-box">🔒 Secure & Reliable</div>
+    <div class="feature-box">🤖 AI-Driven Automation</div>
+    <div class="feature-box">📊 Data Insights</div>
+</section>
+
+<!-- Timeline Section -->
+<section class="timeline-section py-5">
+    <h2 class="fw-bold text-center">Our Journey</h2>
+    <div class="container">
+        <div class="timeline">
+            <div class="timeline-box" data-aos="fade-right">
+                <h4>2015</h4>
+                <p>Our journey began with a vision to transform business automation.</p>
+            </div>
+            <div class="timeline-box" data-aos="fade-left">
+                <h4>2018</h4>
+                <p>Launched our first AI-powered CRM tool, gaining massive traction.</p>
+            </div>
+            <div class="timeline-box" data-aos="fade-right">
+                <h4>2021</h4>
+                <p>Expanded globally, partnering with Fortune 500 companies.</p>
+            </div>
+            <div class="timeline-box" data-aos="fade-left">
+                <h4>2024</h4>
+                <p>Innovating the future with next-gen AI solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    AOS.init();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function startTyping() {
+            new Typed(".typing-text", {
+                strings: ["Next-Gen CRM Solutions", "AI-Powered Business Growth", "Seamless Customer Experience"],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 5000, // Wait 5s before typing again
+                loop: true
+            });
+        }
+        startTyping();
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>

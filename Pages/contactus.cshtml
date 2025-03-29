@@ -1,0 +1,58 @@
+﻿@page
+@model CRM.Pages.contactusModel
+@{
+}
+
+
+<section class="contact-section text-center">
+    <div class="container">
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <p data-aos="fade-up">We'd love to hear from you! Reach out to us anytime.</p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-5" data-aos="fade-right">
+                <div class="contact-card">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</p>
+                    <p><i class="fas fa-envelope"></i> contact@company.com</p>
+                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5" data-aos="fade-left">
+                <div class="contact-card">
+                    <h4>Send Us a Message</h4>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="map-container" data-aos="zoom-in">
+                    <iframe width="100" height="400" frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/place?q=New+York&key=YOUR_API_KEY" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>

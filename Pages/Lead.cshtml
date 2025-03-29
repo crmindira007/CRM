@@ -1,0 +1,112 @@
+﻿@page
+@model CRM.Pages.LeadModel
+@{
+    ViewData["Title"] = "Lead";
+    Layout = null; // Path to your custom layout
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads</title>
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css">
+    <link rel="stylesheet" href="~/css/lead.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="flex justify-between items-center mb-6">
+            <div class="breadcrumb">
+                <a href="C:\Users\rites\OneDrive\Desktop\New folder (2)\sidebar.html" class="text-2xl font-semibold text-blue-800">Dashboard</a>
+                <span class="mx-2 text-gray-500">›</span>
+                <span class="text-2xl font-semibold text-blue-800">Lead</span>
+            </div>
+
+            <button class="button" onclick="window.location.href='CreateLead'"><i class="fas fa-plus"></i> Add Create Lead</button>
+        </div>
+        <div class="table-container">
+            <div class="table-header">
+                <div class="flex items-center space-x-2">
+                    <div>
+                        <button class="button-delete" id="deleteButton">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <select id="statusFilter">
+                        <option value="all">All</option>
+                        <option value="in-process">In Process</option>
+                        <option value="new">New</option>
+                        <option value="recycled">Recycled</option>
+                        <option value="assigned">Assigned</option>
+                        <option value="dead">Dead</option>
+                        <option value="converted">Converted</option>
+                    </select>
+
+
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" id="searchInput">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="text-gray-500">1-20 / 20</div>
+            </div>
+            <table class="table" id="leadsTable">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" onclick="toggleCheckboxes(this)"></th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Assigned User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-status="in-process" data-url="./leadsav.html">
+                        <td><input type="checkbox" class="checkbox"></td>
+                        <td class="text-blue-600">Andrew Peterson</td>
+                        <td><span class="status-badge status-in-process">In Process</span></td>
+                        <td class="text-gray-500">+12197664114</td>
+                        <td class="text-gray-500">andrew.peterson@example.com</td>
+                        <td class="text-gray-500">Jack Adams</td>
+                    </tr>
+        <tr data-status="new" data-url="./dashboard.html">
+            <td><input type="checkbox" class="checkbox"></td>
+            <td class="text-blue-600">Antonio Ricci</td>
+            <td><span class="status-badge status-new">New</span></td>
+            <td class="text-gray-500">+13285250667</td>
+            <td class="text-gray-500">antonio.ricci@example.com</td>
+            <td class="text-gray-500">Adam Powers</td>
+        </tr>
+        <tr data-status="recycled" data-url="./dashboard.html">
+            <td><input type="checkbox" class="checkbox"></td>
+            <td class="text-blue-600">Charles Patry</td>
+            <td><span class="status-badge status-recycled">Recycled</span></td>
+            <td class="text-gray-500">+1239353979</td>
+            <td class="text-gray-500">charles.patry@demo.com</td>
+            <td class="text-gray-500">Jack Adams</td>
+        </tr>
+        <tr data-status="new" data-url="./dashboard.html">
+            <td><input type="checkbox" class="checkbox"></td>
+            <td class="text-blue-600">Nina Thomson</td>
+            <td><span class="status-badge status-new">New</span></td>
+            <td class="text-gray-500">+10794476017</td>
+            <td class="text-gray-500">ninathomson@example.com</td>
+            <td class="text-gray-500">Jack Adams</td>
+        </tr>
+        <tr data-status="in-process" data-url="./dashboard.html">
+            <td><input type="checkbox" class="checkbox"></td>
+            <td class="text-blue-600">Amadei Nowak</td>
+            <td><span class="status-badge status-in-process">In Process</span></td>
+            <td class="text-gray-500">+18891707045</td>
+            <td class="text-gray-500">amadei.nowak@example.com</td>
+            <td class="text-gray-500">Ben Smith</td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+    <script src="~/js/lead.js"></script>
+    </body>
+    </html>

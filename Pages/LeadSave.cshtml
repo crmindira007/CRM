@@ -1,0 +1,179 @@
+﻿@page
+@model CRM.Pages.LeadSaveModel
+@{
+	ViewData["Title"] = "LeadSave";
+	Layout = null; // Path to your custom layout ViewData
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="~/css/leadsav.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="flex justify-between items-center mb-4">
+            <div class="text-lg text-gray-600">
+                <span class="text-2xl font-semibold text-blue-800 cursor-pointer" onclick="window.location.href='D:/New folder(2)/lead/lead.html';">Leads</span>
+                <span class="mx-2 text-gray-500">›</span>
+                <span class="text-2xl font-semibold text-blue-800">Andrew Peterson</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button id="editButton" class="btn-attractive" onclick="toggleEditMode()">Edit</button>
+                <input type="hidden" id="editMode" value="false"> <!-- Hidden input to track edit mode -->
+                <button class="btn-attractive">Followed</button>
+                <button class="btn-attractive" onclick="window.location.href='D:/New folder(2)/lead/convert.html';">Convert</button>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="md:col-span-2">
+                <div class="bg-white p-6 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+                    <h2 class="text-lg font-semibold mb-4">Overview</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p><strong>Name</strong></p>
+                            <p id="nameDisplay">Dr. Andrew Peterson</p>
+                            <input type="text" id="nameInput" value="Dr. Andrew Peterson" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Account Name</strong></p>
+                            <p id="accountNameDisplay">Magik Grey</p>
+                            <input type="text" id="accountNameInput" value="Magik Grey" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p id="emailDisplay" class="text-blue-500">andrew.peterson@example.com</p>
+                            <input type="email" id="emailInput" value="andrew.peterson@example.com" style="display:none;" class="input-attractive text-blue-500">
+                        </div>
+                        <div>
+                            <p><strong>Phone</strong></p>
+                            <p id="phoneDisplay" class="text-blue-500">+12197664114 <span class="text-gray-500">Mobile</span></p>
+                            <input type="tel" id="phoneInput" value="+12197664114" style="display:none;" class="input-attractive text-blue-500">
+                        </div>
+                        <div>
+                            <p><strong>Title</strong></p>
+                            <p id="titleDisplay">Ophthalmologist</p>
+                            <input type="text" id="titleInput" value="Ophthalmologist" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Website</strong></p>
+                            <p id="websiteDisplay" class="text-blue-500">www.magik-grey.demo.us</p>
+                            <input type="text" id="websiteInput" value="www.magik-grey.demo.us" style="display:none;" class="input-attractive text-blue-500">
+                        </div>
+                        <div>
+                            <p><strong>Address</strong></p>
+                            <p id="addressDisplay">2441 Duffy Street<br>Los Angeles IN 46347<br>United States</p>
+                            <input type="text" id="addressInput" value="2441 Duffy Street, Los Angeles IN 46347, United States" style="display:none;" class="input-attractive">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h2 class="text-lg font-semibold mb-4">Details</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p><strong>Status</strong></p>
+                            <p id="statusDisplay"><span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded">In Process</span></p>
+                            <select id="statusInput" style="display:none;" class="input-attractive">
+                                <option value="Assigned">Assigned</option>
+                                <option value="In Process">In Process</option>
+                                <option value="Converted">Converted</option>
+                                <option value="Recycled">Recycled</option>
+                                <option value="Dead">Dead</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p><strong>Source</strong></p>
+                            <p id="sourceDisplay">Call</p>
+                            <input type="text" id="sourceInput" value="Call" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Opportunity Amount</strong></p>
+                            <p id="opportunityAmountDisplay">None</p>
+                            <input type="text" id="opportunityAmountInput" value="None" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Campaign</strong></p>
+                            <p id="campaignDisplay">None</p>
+                            <input type="text" id="campaignInput" value="None" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Industry</strong></p>
+                            <p id="industryDisplay">Healthcare</p>
+                            <input type="text" id="industryInput" value="Healthcare" style="display:none;" class="input-attractive">
+                        </div>
+                        <div>
+                            <p><strong>Description</strong></p>
+                            <p id="descriptionDisplay">None</p>
+                            <input type="text" id="descriptionInput" value="None" style="display:none;" class="input-attractive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+                        <h2 class="text-lg font-semibold mb-4">Assigned User</h2>
+                        <p><i class="fas fa-user-circle"></i> Jack Adams</p>
+                        <p><strong>Teams</strong></p>
+                        <p>None</p>
+                        <p><strong>Created</strong></p>
+                        <p>Today 06:00 - Jack Adams</p>
+                        <p><strong>Modified</strong></p>
+                        <p>Today 06:00 - Jack Adams</p>
+                        <p><strong>Followers</strong></p>
+                        <p>Jack Adams</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+                        <h2 class="text-lg font-semibold mb-4">Activities</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <p class="text-blue-500">Business Forum for Online Shops</p>
+                                    <p>Apr 02 12:00 <i class="fas fa-user-circle"></i> Jack Adams</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <p class="text-blue-500">Business meeting with potential partners</p>
+                                    <p>Mar 20 07:15 <i class="fas fa-user-circle"></i> Jack Adams</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <p class="text-blue-500">Phone marketing for in-process+assigned leads</p>
+                                    <p>Mar 13 10:30 <i class="fas fa-user-circle"></i> Jack Adams</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+                        <h2 class="text-lg font-semibold mb-4">History</h2>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <p class="text-blue-500">Discount discussion</p>
+                                <p>Today 14:00 <i class="fas fa-user-circle"></i> Ben Smith</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                        <h2 class="text-lg font-semibold mb-4">Tasks</h2>
+                        <p>No Data</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/leadsav.js"></script>
+</body>
+</html>

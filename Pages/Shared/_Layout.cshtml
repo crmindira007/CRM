@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CRM</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CRM.styles.css" asp-append-version="true" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">CRM</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/aboutus">AboutUs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contactus">ContactUs</a>
+                        </li>
+                    </ul>
+                    <a href="/signin"><button class="btn btn-success" type="submit">Sign in</button></a>
+                    <a href="/signup"><button class="btn btn-outline-success" type="submit">Sign up for FREE</button></a>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+        <main role="main">
+            @RenderBody()
+        </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4 footer-about">
+                    <h4 class="footer-title">About Us</h4>
+                    <p>We provide next-gen CRM solutions to help businesses grow, automate workflows, and improve customer relations.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2 footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-md-2 footer-support">
+                    <h4 class="footer-title">Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-md-4 footer-social">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#">
+                            <span>
+                                <img src="~/img/instagram_2111463.png" alt="Enterprise-Grade Security Icon" class="logo-icon2">
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span>
+                                <img src="~/img/social_12942327.png" alt="Enterprise-Grade Security Icon" class="logo-icon2">
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span>
+                                <img src="~/img/twitter_3256013.png" alt="Enterprise-Grade Security Icon" class="logo-icon2">
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span>
+                                <img src="~/img/github_3291695.png" alt="Enterprise-Grade Security Icon" class="logo-icon2">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom text-center">
+                <p>© 2025 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // User is scrolling down, hide the navbar
+                navbar.style.top = "-80px";
+            } else {
+                // User is scrolling up, show the navbar smoothly
+                navbar.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

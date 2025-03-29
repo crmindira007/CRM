@@ -1,0 +1,67 @@
+﻿@page
+@model CRM.Pages.loginModel
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/Pages/Shared/Login_Layout.cshtml"; // Path to your custom layout
+}
+
+<div class="login-container">
+    <h1>CRM</h1>
+    <p>Welcome! Please Signin to continue.</p>
+    <form method="post" class="login-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- Email Input -->
+        <div class="input-group">
+            <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 544 544" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                    <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64z" />
+                    <path d="M0 176V384c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176" />
+                </svg>
+            </span>
+            <input asp-for="Email" placeholder="Email"  required />
+        </div>
+        @if (!string.IsNullOrEmpty(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage))
+        {
+            <span asp-validation-for="Email" class="text-danger" style="color:red"></span>
+        }
+
+        <!-- Password Input -->
+        <div class="input-group">
+            <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 544 544" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                    <circle cx="336" cy="176" r="40" />
+                    <path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24v-40h40c13.3 0 24-10.7 24-24v-40h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3z" />
+                </svg>
+            </span>
+            <input asp-for="Password" placeholder="Password"  required />
+        </div>
+        @if (!string.IsNullOrEmpty(ViewData.ModelState["Password"]?.Errors.FirstOrDefault()?.ErrorMessage))
+        {
+        <span asp-validation-for="Password" class="text-danger" style="color:red"></span>
+        }
+        <a href="/forgotpass" class="forget-link">Forget Password?</a>
+
+        <button type="submit" class="submit-btn">Sign In</button>
+        <p><a href="/signup" class="signup-link">Don't have an account?</a></p>
+
+        <!-- Error Message -->
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <p class="text-danger" style="color:red">@Model.ErrorMessage</p>
+        }
+    </form>
+
+
+    <!-- Separator -->
+<div class="separator">
+    <span>or</span>
+</div>
+
+    <!-- Google Login Button -->
+    <button type="button" class="signin-button google-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px" class="google-icon"><path d="M 26 2 C 13.308594 2 3 12.308594 3 25 C 3 37.691406 13.308594 48 26 48 C 35.917969 48 41.972656 43.4375 45.125 37.78125 C 48.277344 32.125 48.675781 25.480469 47.71875 20.9375 L 47.53125 20.15625 L 46.75 20.15625 L 26 20.125 L 25 20.125 L 25 30.53125 L 36.4375 30.53125 C 34.710938 34.53125 31.195313 37.28125 26 37.28125 C 19.210938 37.28125 13.71875 31.789063 13.71875 25 C 13.71875 18.210938 19.210938 12.71875 26 12.71875 C 29.050781 12.71875 31.820313 13.847656 33.96875 15.6875 L 34.6875 16.28125 L 41.53125 9.4375 L 42.25 8.6875 L 41.5 8 C 37.414063 4.277344 31.960938 2 26 2 Z M 26 4 C 31.074219 4 35.652344 5.855469 39.28125 8.84375 L 34.46875 13.65625 C 32.089844 11.878906 29.199219 10.71875 26 10.71875 C 18.128906 10.71875 11.71875 17.128906 11.71875 25 C 11.71875 32.871094 18.128906 39.28125 26 39.28125 C 32.550781 39.28125 37.261719 35.265625 38.9375 29.8125 L 39.34375 28.53125 L 27 28.53125 L 27 22.125 L 45.84375 22.15625 C 46.507813 26.191406 46.066406 31.984375 43.375 36.8125 C 40.515625 41.9375 35.320313 46 26 46 C 14.386719 46 5 36.609375 5 25 C 5 13.390625 14.386719 4 26 4 Z" /></svg>
+        Sign in with Google
+    </button>
+
+</div>

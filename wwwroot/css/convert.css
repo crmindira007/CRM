@@ -1,0 +1,73 @@
+body {
+    background-color: #f7fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding: 16px;
+}
+
+nav {
+    font-size: 0.875rem;
+    color: #718096;
+    margin-bottom: 16px;
+}
+
+nav span {
+    margin-right: 4px;
+}
+
+nav .purple {
+    color: #9f7aea;
+}
+
+nav .blue {
+    color: #4299e1;
+}
+
+.checkbox-group {
+    margin-bottom: 16px;
+}
+
+.checkbox-group div {
+    margin-bottom: 8px;
+}
+
+.checkbox-group label {
+    color: #4a5568;
+}
+
+.buttons {
+    margin-top: 16px;
+}
+
+.buttons button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.buttons .convert {
+    background-color: #4299e1;
+    color: white;
+}
+
+.buttons .cancel {
+    background-color: #edf2f7;
+    color: #4a5568;
+}
+
+footer {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 0.875rem;
+    padding: 16px;
+}

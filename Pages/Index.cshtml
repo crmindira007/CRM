@@ -1,0 +1,327 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "CRM";
+}
+
+<section class="main-container d-flex align-items-center bg-white p-5 rounded position-relative">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Section (Smaller Text Area) -->
+            <div class="col-md-4 text-left">
+                <h1 class="banner-text display-4 font-weight-bold text-primary">
+                    <span class="gradient-text">Build Stronger Connections,</span><br>
+                    <span class="gradient-text2">Close More Deals!</span>
+                </h1>
+                <p class="text-muted lead font-italic">
+                    Boost productivity and streamline customer relationships with
+                    <span class="cursive font-weight-bold text-dark">our powerful CRM solution.</span>
+                </p>
+                <button class="btn btn-success px-4 py-2 mt-2">Sign Up for Free</button>
+            </div>
+
+            <!-- Right Section (Larger Image, Positioned Correctly) -->
+            <div class="col-md-8 text-center position-relative">
+                <img src="~/img/banner_img.png" alt="CRM Illustration" class="img-fluid main-image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Non-Interfering Floating Vectors (Background Layer) -->
+    <img src="~/img/vector1 (1).png" class="floating-vector vector-1" alt="Vector Shape">
+    <img src="~/img/vector2.png" class="floating-vector vector-3" alt="Vector Shape">
+</section>
+
+
+
+<!-- CRM Features Section -->
+<section class="crm-features py-5">
+    <div class="container text-center position-relative">
+        <!-- Non-Interfering Floating Vectors (Background Layer) -->
+        <img src="~/img/vector3.png" class="floating-vector vector-2" style="width: 300px;" alt="Vector Shap">
+
+        <!-- Section Heading -->
+        <h2 class="section-title">🚀 Elevate Your Business with <span class="cursive highlight">Next-Gen CRM</span></h2>
+        <p class="section-description">
+            Powerful tools to streamline sales, automate tasks, and build meaningful customer relationships.
+        </p>
+
+        <!-- Features Grid -->
+        <div class="row mt-5">
+            <!-- Feature 1 -->
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="~/img/Lead Management.png" alt="Lead Management Icon" class="logo-icon">
+                    </div>
+                    <h4 class="feature-title">Lead Management</h4>
+                    <p class="feature-description">Track and nurture leads with ease, boosting your conversions.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="~/img/workflow automation.png" alt="AI-Powered Automation Icon" class="logo-icon">
+                    </div>
+                    <h4 class="feature-title">AI-Powered Automation</h4>
+                    <p class="feature-description">Automate repetitive tasks and focus on closing deals.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="~/img/real-time.png" alt="Real-Time Analytics Icon" class="logo-icon">
+                    </div>
+                    <h4 class="feature-title">Real-Time Analytics</h4>
+                    <p class="feature-description">Gain deep insights and track business performance in real-time.</p>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="~/img/network.png" alt="Omnichannel Communication Icon" class="logo-icon">
+                    </div>
+                    <h4 class="feature-title">Omnichannel Communication</h4>
+                    <p class="feature-description">Engage with customers through email, SMS, and social media.</p>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="~/img/-mobile access.png" alt="Mobile-Friendly Access Icon" class="logo-icon">
+                    </div>
+                    <h4 class="feature-title">Mobile-Friendly Access</h4>
+                    <p class="feature-description">Manage your CRM from anywhere with seamless mobile support.</p>
+                </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="~/img/Enterprise.png" alt="Enterprise-Grade Security Icon" class="logo-icon">
+                    </div>
+                    <h4 class="feature-title">Enterprise-Grade Security</h4>
+                    <p class="feature-description">Your data is encrypted and protected with top-tier security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="testimonials-section">
+    <div class="testimonial-heading">
+        <h2>🌟 What Our Customers Say</h2>
+        <p>Trusted by thousands of businesses worldwide.</p>
+    </div>
+
+    <div class="testimonial-container">
+        <div class="testimonial-bubble" data-aos="fade-up" data-aos-duration="1000">
+            <img src="~/img/handsome-man-isolated-white-background.jpg" class="testimonial-avatar" alt="Customer 1">
+            <p class="testimonial-text">"This CRM changed the way we handle our sales! Highly recommended! 🚀"</p>
+            <h4 class="customer-name">- John Doe, CEO at TechCorp</h4>
+        </div>
+
+        <div class="testimonial-bubble" data-aos="fade-up" data-aos-duration="1200">
+            <img src="~/img/smiling-happy-businessman-looking-camera.jpg" class="testimonial-avatar" alt="Customer 2">
+            <p class="testimonial-text">"Super intuitive and powerful automation. Saved us hours of work!🔥"</p>
+            <h4 class="customer-name">- Sarah Lee, Founder at InnovateX</h4>
+        </div>
+
+        <div class="testimonial-bubble" data-aos="fade-up" data-aos-duration="1400">
+            <img src="~/img/man-isolated-showing-facial-emotions.jpg" class="testimonial-avatar" alt="Customer 3">
+            <p class="testimonial-text">"The analytics feature gave us great insights into customer behavior. Love it! 💡"</p>
+            <h4 class="customer-name">- Alex Turner, Marketing Lead at BrightAds</h4>
+        </div>
+    </div>
+</section>
+
+
+<section class="our-blog p-0 m-0 bg-silver">
+    <div class="container work-process pb-5 pt-5">
+        <div class="title mb-5 text-center">
+            <!-- Section Heading -->
+            <h2 class="section-title">📞 Stay Connected with Our <span class="cursive highlight">Follow-Up Process</span></h2>
+            <p class="section-description">
+                A structured approach to ensure seamless communication, timely updates, and lasting relationships.
+            </p>
+
+        </div>
+        <!-- ============ Step 1 =========== -->
+        <div class="row">
+            <div class="col-md-5">
+                <div class="process-box process-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="process-step">
+                                <h2 class="cursive m-0 p-0">Step</h2>
+                                <h2 class="m-0 p-0">01</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Initial Contact</h5>
+                            <p><small>We reach out to understand your needs and gather essential details.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- ============ Step 2 =========== -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <div class="process-box process-right" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="process-step">
+                                <h2 class="cursive m-0 p-0">Step</h2>
+                                <h2 class="m-0 p-0">02</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Discussion</h5>
+                            <p><small>We discuss your goals, expectations, and any specific requirements.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============ Step 3 =========== -->
+        <div class="row">
+            <div class="col-md-5">
+                <div class="process-box process-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="process-step">
+                                <h2 class="cursive m-0 p-0">Step</h2>
+                                <h2 class="cursive m-0 p-0">03</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Proposal</h5>
+                            <p><small>We provide a tailored solution and outline the next steps.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- ============ Step 4 =========== -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <div class="process-box process-right" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="process-step">
+                                <h2 class="cursive m-0 p-0">Step</h2>
+                                <h2 class="cursive m-0 p-0">04</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Implementation</h5>
+                            <p><small>We execute the plan efficiently, ensuring quality and timeliness.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============ Step 5 =========== -->
+        <div class="row">
+            <div class="col-md-5">
+                <div class="process-box process-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="process-step">
+                                <h2 class="cursive m-0 p-0">Step</h2>
+                                <h2 class="cursive m-0 p-0">05</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <h5>Review & Support</h5>
+                            <p><small>We ensure your satisfaction and provide ongoing support as needed.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    AOS.init();
+</script>
+
+
+
+                            <!-- CRM Features Section -->
+<section class="crm-features bg-white">
+    <div class="container text-center">
+        <!-- Section Heading -->
+        <h2 class="section-title">🔒 Unlock the Power of <span class="cursive highlight">Next-Gen CRM</span></h2>
+        <p class="section-description">
+            Transform your business with AI-driven automation, seamless integrations, and real-time insights.
+        </p>
+    </div>
+
+    <div class="feature-bubbles">
+        <!-- Feature 1 -->
+        <div class="bubble" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="bubble-content">
+                <!-- Add your SVG icon here -->
+                    <img src="~/img/calendar_1118738.png" alt="Enterprise-Grade Security Icon" class="logo-icon">
+                <h4>Smart Follow-Ups</h4>
+            </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bubble" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="bubble-content">
+                <!-- SVG Icon -->
+                <img src="~/img/efficiency_4482062.png" alt="Enterprise-Grade Security Icon" class="logo-icon">
+
+                <h4>Real-Time Analytics</h4>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bubble" data-aos="zoom-in" data-aos-duration="1400">
+            <div class="bubble-content">
+                <img src="~/img/product_1933859.png" alt="Enterprise-Grade Security Icon" class="logo-icon">
+
+                <h4>Workflow Automation</h4>
+            </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bubble" data-aos="zoom-in" data-aos-duration="1600">
+            <div class="bubble-content">
+                <img src="~/img/robot_3279177.png" alt="Enterprise-Grade Security Icon" class="logo-icon">
+
+                <h4>Seamless Integrations</h4>
+            </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bubble" data-aos="zoom-in" data-aos-duration="1800">
+            <div class="bubble-content">
+                <img src="~/img/devops_12465335.png" alt="Enterprise-Grade Security Icon" class="logo-icon">
+                <h4>AI Chatbot Support</h4>
+            </div>
+        </div>
+
+</section>
