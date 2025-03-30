@@ -59,7 +59,7 @@ body {
     color: #3B82F6;
 }
 
-.button {
+.tab {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -70,26 +70,26 @@ body {
     padding-left: 16px;
 }
 
-.button:hover .fa-bars,
-.button:hover .fa-home,
-.button:hover .fa-user,
-.button:hover .fa-users,
-.button:hover .fa-envelope,
-.button:hover .fa-id-badge,
-.button:hover .fa-building {
+.tab:hover .fa-bars,
+.tab:hover .fa-home,
+.tab:hover .fa-user,
+.tab:hover .fa-users,
+.tab:hover .fa-envelope,
+.tab:hover .fa-id-badge,
+.tab:hover .fa-building {
     color: #3B82F6;
     /* Change to blue on hover */
     transform: rotate(360deg);
 }
 
-.button span {
+.tab span {
     display: none;
     margin-left: 10px;
     font-size: 16px;
     color: #4B5563;
 }
 
-.sidebar.expanded .button span {
+.sidebar.expanded .tab span {
     display: inline;
 }
 
@@ -110,7 +110,7 @@ body {
     color: #9CA3AF;
 }
 
-.dark-mode .button span {
+.dark-mode .tab span {
     color: #D1D5DB;
 }
 

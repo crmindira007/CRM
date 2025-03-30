@@ -1,0 +1,64 @@
+﻿@page
+@model CRM.Pages.AccountsModel
+@{
+	ViewData["Title"] = "Accounts";
+    Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Path to your custom layout
+}
+
+    <div class="container">
+        <div class="flex justify-between items-center mb-6">
+            <div class="breadcrumb">
+                <a href="Dashboard" class="text-2xl font-semibold text-blue-800">Dashboard</a>
+                <span class="mx-2 text-gray-500">›</span>
+                <span class="text-2xl font-semibold text-blue-800">Account</span>
+            </div>
+            <button class="button" onclick="window.location.href='CreateAccount'"><i class="fas fa-plus"></i> Add Account</button>
+        </div>
+        <div class="table-container">
+            <div class="table-header">
+                <div class="flex items-center space-x-2">
+                    <div>
+                        <button class="button-delete" id="deleteButton">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search" id="searchInput">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="text-gray-500">1-20 / 20</div>
+            </div>
+            <table class="table" id="leadsTable">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" onclick="toggleCheckboxes(this)"></th>
+                        <th>Name</th>
+                        <th>Industry</th>
+                        <th>type</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-status="in-process" data-url="./leadsav.html">
+                        <td><input type="checkbox" class="checkbox"></td>
+                        <td class="text-blue-600">Irving's Sport Goods Branch</td>
+                        <td><span class="status-badge status-in-process">Apparel & Accessories</span></td>
+                        <td class="text-gray-500">Customer</td>
+                        <td class="text-gray-500">
+                            United States
+                            </td>
+                    </tr>
+                    <tr data-status="new" data-url="./dashboard.html">
+                        <td><input type="checkbox" class="checkbox"></td>
+                        <td class="text-blue-600">AFP Supply</td>
+                        <td><span class="status-badge status-new">Wholesale</span></td>
+                        <td class="text-gray-500">Customer</td>
+                        <td class="text-gray-500">Germany</td>
+                    </tr>
+                   
+        </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="~/js/account.js"></script>

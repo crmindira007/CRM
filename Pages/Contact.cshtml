@@ -1,8 +1,8 @@
 ﻿@page
-@model CRM.Pages.LeadModel
+@model CRM.Pages.ContactModel
 @{
-    ViewData["Title"] = "Lead";
-    Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Path to your custom layout
+	 ViewData["Title"] = "Contact";
+     Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Path to your custom layout
 }
 
     <div class="container">
@@ -10,10 +10,9 @@
             <div class="breadcrumb">
                 <a href="Dashboard" class="text-2xl font-semibold text-blue-800">Dashboard</a>
                 <span class="mx-2 text-gray-500">›</span>
-                <span class="text-2xl font-semibold text-blue-800">Lead</span>
+                <span class="text-2xl font-semibold text-blue-800">Contact</span>
             </div>
-
-            <button class="button" onclick="window.location.href='CreateLead'"><i class="fas fa-plus"></i> Add Create Lead</button>
+            <button class="button" onclick="window.location.href='CreateContact'"><i class="fas fa-plus"></i> Add Contact</button>
         </div>
         <div class="table-container">
             <div class="table-header">
@@ -46,55 +45,107 @@
                     <tr>
                         <th><input type="checkbox" onclick="toggleCheckboxes(this)"></th>
                         <th>Name</th>
-                        <th>Status</th>
+                        <th>Account</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Assigned User</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr data-status="in-process" data-url="./leadsav.html">
                         <td><input type="checkbox" class="checkbox"></td>
                         <td class="text-blue-600">Andrew Peterson</td>
-                        <td><span class="status-badge status-in-process">In Process</span></td>
+                        <td><span class="status-badge status-in-process">Irving's Sport Goods</span></td>
                         <td class="text-gray-500">+12197664114</td>
                         <td class="text-gray-500">andrew.peterson@example.com</td>
-                        <td class="text-gray-500">Jack Adams</td>
                     </tr>
         <tr data-status="new" data-url="./dashboard.html">
             <td><input type="checkbox" class="checkbox"></td>
             <td class="text-blue-600">Antonio Ricci</td>
-            <td><span class="status-badge status-new">New</span></td>
+            <td><span class="status-badge status-new">National Lumber	</span></td>
             <td class="text-gray-500">+13285250667</td>
             <td class="text-gray-500">antonio.ricci@example.com</td>
-            <td class="text-gray-500">Adam Powers</td>
         </tr>
         <tr data-status="recycled" data-url="./dashboard.html">
             <td><input type="checkbox" class="checkbox"></td>
             <td class="text-blue-600">Charles Patry</td>
-            <td><span class="status-badge status-recycled">Recycled</span></td>
+            <td><span class="status-badge status-recycled">National Lumber</span></td>
             <td class="text-gray-500">+1239353979</td>
             <td class="text-gray-500">charles.patry@demo.com</td>
-            <td class="text-gray-500">Jack Adams</td>
         </tr>
         <tr data-status="new" data-url="./dashboard.html">
             <td><input type="checkbox" class="checkbox"></td>
             <td class="text-blue-600">Nina Thomson</td>
-            <td><span class="status-badge status-new">New</span></td>
+            <td><span class="status-badge status-new">National Lumber</span></td>
             <td class="text-gray-500">+10794476017</td>
             <td class="text-gray-500">ninathomson@example.com</td>
-            <td class="text-gray-500">Jack Adams</td>
         </tr>
         <tr data-status="in-process" data-url="./dashboard.html">
             <td><input type="checkbox" class="checkbox"></td>
             <td class="text-blue-600">Amadei Nowak</td>
-            <td><span class="status-badge status-in-process">In Process</span></td>
+            <td><span class="status-badge status-in-process">National Lumber</span></td>
             <td class="text-gray-500">+18891707045</td>
             <td class="text-gray-500">amadei.nowak@example.com</td>
-            <td class="text-gray-500">Ben Smith</td>
         </tr>
         </tbody>
         </table>
-        </div>
     </div>
-    <script src="~/js/lead.js"></script>
+    </div>
+    <script>
+
+        document.getElementById('searchInput').addEventListener('keyup', function () {
+            var searchValue = this.value.toLowerCase();
+            var tableRows = document.querySelectorAll('#leadsTable tbody tr');
+
+            tableRows.forEach(function (row) {
+                var rowText = row.textContent.toLowerCase();
+                if (rowText.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('statusFilter').addEventListener('change', function () {
+            var filterValue = this.value;
+            var tableRows = document.querySelectorAll('#leadsTable tbody tr');
+
+            tableRows.forEach(function (row) {
+                var rowStatus = row.getAttribute('data-status');
+                if (filterValue === 'all' || rowStatus === filterValue) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+        function toggleCheckboxes(source) {
+            let checkboxes = document.querySelectorAll('.checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = source.checked;
+            });
+        }
+        document.getElementById('deleteButton').addEventListener('click', function () {
+            const checkboxes = document.querySelectorAll('.checkbox:checked');
+            checkboxes.forEach(checkbox => {
+                const row = checkbox.closest('tr');
+                if (row) {
+                    row.remove();
+                }
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const rows = document.querySelectorAll("#leadsTable tbody tr");
+
+            rows.forEach(row => {
+                row.addEventListener("click", function (event) {
+                    if (!event.target.closest("input")) { // Ignore clicks on checkboxes
+                        const url = row.getAttribute("data-url");
+                        if (url) {
+                            window.location.href = url;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
