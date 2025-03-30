@@ -56,7 +56,6 @@ function load() {
         body.classList.add('darkmode');
         icon.classList.add('fa-moon');
     } else if (darkmode == 'false') {
-        icon.classList.add('fa-sun');
     }
 }
 
