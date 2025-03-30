@@ -1,0 +1,50 @@
+﻿@page
+@model CRM.Pages.Shared.NewMailModel
+@{
+    Layout = null;
+}
+<html>
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body class="bg-white text-black h-screen flex flex-col">
+    <div class="flex items-center justify-between p-4 bg-gray-100">
+        <div class="flex items-center space-x-2">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded flex items-center">
+                <i class="fas fa-paper-plane mr-2"></i> Send
+            </button>
+            <button class="bg-blue-600 text-white px-2 py-2 rounded">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-shield-alt"></i>
+            <i class="fas fa-trash"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </div>
+    <div class="flex flex-col p-4 space-y-4 flex-grow">
+        <div class="flex items-center space-x-2">
+            <button class="bg-gray-200 text-black px-4 py-2 rounded">To</button>
+            <input type="text" class="flex-grow bg-gray-200 text-black px-4 py-2 rounded outline-none" placeholder="" />
+            <span class="text-gray-500">Bcc</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button class="bg-gray-200 text-black px-4 py-2 rounded">Cc</button>
+            <input type="text" class="flex-grow bg-gray-200 text-black px-4 py-2 rounded outline-none" placeholder="" />
+        </div>
+        <input type="text" class="bg-gray-200 text-black px-4 py-2 rounded outline-none" placeholder="Add a subject" />
+    </div>
+    <div class="bg-gray-100 p-4">
+        <div class="flex items-center space-x-2">
+            <i class="fas fa-pen"></i>
+            <span>(No subject)</span>
+            <i class="fas fa-times text-blue-600"></i>
+        </div>
+    </div>
+</body>
+
+</html>
