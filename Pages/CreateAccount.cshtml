@@ -1,31 +1,21 @@
 ﻿@page
 @model CRM.Pages.CreateAccountModel
 @{
-	ViewData["Title"] = "Create Account";
-    Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Path to your custom layout
+    ViewData["Title"] = "Create Account";
+    Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Keeping your original layout
 }
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css">
-    <link rel="stylesheet" href="~/css/createaccount.css"/>
-</head>
-<body>
     <div class="container">
         <div class="flex items-center justify-between mb-6">
             <div class="flex items-center mb-4 breadcrumb">
                 <a href="dashboard" class="text-2xl font-semibold text-blue-800">Dashboard</a>
                 <span class="mx-2 text-gray-500">›</span>
-                <a href="lead" class="text-2xl font-semibold text-blue-800">Account</a>
+                <a href="Accounts" class="text-2xl font-semibold text-blue-800">Account</a>
                 <span class="mx-2 text-gray-500">›</span>
                 <span class="text-2xl font-semibold text-gray-700">Create</span>
             </div>
             <div class="flex items-center space-x-2">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300 btn-save-lead" onclick="window.location.href='Lead';">Save</button>
-                <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded shadow-md hover:shadow-lg transition duration-300 btn-cancel-lead" onclick="window.location.href='Lead';">Cancel</button>
+                <button type="submit" form="accountForm" class="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:shadow-lg transition duration-300">Save</button>
+                <button type="button" class="bg-gray-200 text-gray-700 px-4 py-2 rounded shadow-md hover:shadow-lg transition duration-300" onclick="window.location.href='Lead';">Cancel</button>
                 <div class="relative">
                     <button class="button_edit" onclick="toggleDropdown()">
                         <i class="fas fa-ellipsis-h"></i>
@@ -41,69 +31,33 @@
         <div class="flex flex-col lg:flex-row">
             <div class="form-section flex-1">
                 <h2>Overview</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label>Name *</label>
-                        <div class="flex space-x-2">
-                   
-                            <input type="text" placeholder="Full Name" class="border p-2 rounded w-full">
+                <form method="post" id="accountForm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label>Username *</label>
+                            <input type="text" asp-for="NewAccount.Username" class="border p-2 rounded w-full" required>
+                        </div>
+                        <div>
+                            <label>Email *</label>
+                            <input type="email" asp-for="NewAccount.Email" class="border p-2 rounded w-full" required>
+                        </div>
+                        <div>
+                            <label>Password *</label>
+                            <input type="password" asp-for="NewAccount.Password" class="border p-2 rounded w-full" required>
                         </div>
                     </div>
-                    <div>
-                        <label>Account Name</label>
-                        <input type="text" class="border p-2 rounded w-full">
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="email" class="border p-2 rounded w-full">
-                    </div>
-                    <div>
-                        <label>Phone</label>
-                        <div class="flex space-x-2">
-                            <select class="border p-2 rounded">
-                                <option>Mobile</option>
-                                <option>Home</option>
-                                <option>Work</option>
-                            </select>
-                            <input type="text" class="border p-2 rounded w-full">
-                        </div>
-                    </div>
-                    <div>
-                        <label>Address</label>
-                        <div class="grid grid-cols-2 gap-2">
-                            <textarea class="border p-2 rounded" name="Address" rows="2" cols="10"></textarea>
+                </form>
+            </div>
+        </div>
 
-                        </div>
-                    </div>
-                </div>
-                <h2 class="mt-6 mb-4">Details</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-         
-                    <div>
-                        <label>Industry</label>
-                        <select class="border p-2 rounded w-full">
-                            <option>Technology</option>
-                            <option>Finance</option>
-                            <option>Healthcare</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <textarea class="border p-2 rounded w-full"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="form-section mt-4 lg:mt-0 lg:ml-4 lg:w-1/3">
-                <h2>Assigned User</h2>
-                <select class="border p-2 rounded w-full mb-4">
-                    <option>Select</option>
-                    <option>User 1</option>
-                    <option>User 2</option>
-                </select>
-               
-            </div>
-        </div>
-        </div>
-    <script src="./js/createlead.js"></script>
-</body>
-</html>
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="text-red-500">@Model.ErrorMessage</div>
+        }
+        @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+        {
+            <div class="text-green-500">@Model.SuccessMessage</div>
+        }
+    </div>
+
+    <script src="~/js/createlead.js"></script>

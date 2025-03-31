@@ -353,10 +353,6 @@ iframe {
     transition: 0.3s ease-in-out;
 }
 
-    .email-frame:hover {
-        transform: scale(1.02);
-    }
-
 /* Header styling */
 .email-header {
     background: linear-gradient(135deg, #007bff, #0056b3);
