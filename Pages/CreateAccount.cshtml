@@ -2,7 +2,7 @@
 @model CRM.Pages.CreateAccountModel
 @{
 	ViewData["Title"] = "Create Account";
-	Layout = null; // Path to your custom layout
+    Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Path to your custom layout
 }
 
 <html lang="en">
@@ -17,9 +17,9 @@
     <div class="container">
         <div class="flex items-center justify-between mb-6">
             <div class="flex items-center mb-4 breadcrumb">
-                <a href="dashboard.html" class="text-2xl font-semibold text-blue-800">Dashboard</a>
+                <a href="dashboard" class="text-2xl font-semibold text-blue-800">Dashboard</a>
                 <span class="mx-2 text-gray-500">›</span>
-                <a href="lead.html" class="text-2xl font-semibold text-blue-800">Account</a>
+                <a href="lead" class="text-2xl font-semibold text-blue-800">Account</a>
                 <span class="mx-2 text-gray-500">›</span>
                 <span class="text-2xl font-semibold text-gray-700">Create</span>
             </div>
@@ -70,12 +70,9 @@
                     </div>
                     <div>
                         <label>Address</label>
-                        <input type="text" placeholder="Street" class="border p-2 rounded w-full mb-2">
                         <div class="grid grid-cols-2 gap-2">
-                            <input type="text" placeholder="City" class="border p-2 rounded">
-                            <input type="text" placeholder="County" class="border p-2 rounded">
-                            <input type="text" placeholder="Postal Code" class="border p-2 rounded">
-                            <input type="text" placeholder="Country" class="border p-2 rounded">
+                            <textarea class="border p-2 rounded" name="Address" rows="2" cols="10"></textarea>
+
                         </div>
                     </div>
                 </div>
@@ -103,16 +100,10 @@
                     <option>User 1</option>
                     <option>User 2</option>
                 </select>
-                <h2>Teams</h2>
-                <select class="border p-2 rounded w-full">
-                    <option>Select</option>
-                    <option>Team 1</option>
-                    <option>Team 2</option>
-                </select>
+               
             </div>
         </div>
         </div>
-    </div>
     <script src="./js/createlead.js"></script>
 </body>
 </html>

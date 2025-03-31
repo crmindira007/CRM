@@ -1,7 +1,7 @@
 
-.container {
+.container_lead {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 .flex {
     display: flex;
@@ -203,7 +203,7 @@
 .search-bar i {
     color: #a0aec0;
 }
-.table-container {
+.table-container_lead {
     background-color: #fff;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);

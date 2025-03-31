@@ -172,3 +172,55 @@ function removeCard(element) {
         card.remove();
     }
 }
+
+ocument.addEventListener("DOMContentLoaded", function () {
+    const bellIcon = document.getElementById("notification-icon");
+    const notificationDropdown = document.getElementById("notification-dropdown");
+    const notificationList = document.getElementById("notification-list");
+
+    let notifications = [];
+
+    // Toggle Notification Dropdown
+    bellIcon.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        // Generate a new notification
+        const newNotification = {
+            id: notifications.length + 1,
+            message: `New update at ${new Date().toLocaleTimeString()}`,
+        };
+
+        // Add to notifications list
+        notifications.unshift(newNotification);
+
+        // Update UI
+        renderNotifications();
+
+        // Show dropdown
+        notificationDropdown.classList.remove("hidden");
+    });
+
+    // Function to render notifications
+    function renderNotifications() {
+        notificationList.innerHTML = "";
+
+        if (notifications.length === 0) {
+            notificationList.innerHTML = '<p class="text-gray-500 text-center">No notifications</p>';
+            return;
+        }
+
+        notifications.forEach((notif) => {
+            const notifItem = document.createElement("div");
+            notifItem.classList.add("py-2", "px-3", "border-b", "hover:bg-gray-100", "cursor-pointer");
+            notifItem.innerHTML = `<p class="text-gray-700">${notif.message}</p>`;
+            notificationList.appendChild(notifItem);
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!notificationDropdown.contains(event.target) && !bellIcon.contains(event.target)) {
+            notificationDropdown.classList.add("hidden");
+        }
+    });
+});

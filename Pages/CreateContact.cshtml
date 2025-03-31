@@ -2,7 +2,7 @@
 @model CRM.Pages.CreateLeadModel
 @{
     ViewData["Title"] = "Create Contact";
-    Layout = null; // Path to your custom layout
+    Layout = "~/Pages/Shared/sidebar_head_full.cshtml"; // Path to your custom layout
 }
 
 <html lang="en">
@@ -69,14 +69,9 @@
                     </div>
                     <div>
                         <label>Address</label>
-                        <input type="text" placeholder="Street" class="border p-2 rounded w-full mb-2">
                         <div class="grid grid-cols-2 gap-2">
-                            <div>
-                            <input type="text" placeholder="City" class="border p-2 rounded">
-                            <input type="text" placeholder="County" class="border p-2 rounded">
-                            <input type="text" placeholder="Postal Code" class="border p-2 rounded">
-                            <input type="text" placeholder="Country" class="border p-2 rounded">
-                            </div>
+                            <textarea class="border p-2 rounded" name="Address" rows="2" cols="10"></textarea>
+
                         </div>
                     </div>
                 </div>
@@ -95,12 +90,6 @@
                     <option>Select</option>
                     <option>User 1</option>
                     <option>User 2</option>
-                </select>
-                <h2>Teams</h2>
-                <select class="border p-2 rounded w-full">
-                    <option>Select</option>
-                    <option>Team 1</option>
-                    <option>Team 2</option>
                 </select>
             </div>
         </div>

@@ -7,6 +7,7 @@ namespace CRM.Pages
     {
         public void OnGet()
         {
+
         }
     }
 }

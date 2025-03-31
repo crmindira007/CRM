@@ -266,3 +266,187 @@ iframe {
     content: "\f304";
     color: white;
 }
+/* container_email styles */
+.container_email_ {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex; /* Use flexbox to layout the sections side by side */
+}
+
+/* Style for the email list */
+.email-list {
+    width: 30%; /* Email list takes 30% of the container_email width */
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 20px; /* Space between the list and the content */
+}
+
+.email-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+    .email-item:hover {
+        background-color: #f0f0f0;
+    }
+
+    .email-item img {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+/* Style for the email frame */
+.email-frame {
+    width: 40%; /* Email content takes 70% of the container_email width */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 80vh; /* Limits the height to avoid overflow */
+}
+
+/* Header section of the email */
+.email-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Sender and recipient information */
+.email-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+    .email-info span {
+        font-weight: bold;
+    }
+
+/* Body of the email */
+.email-body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General email frame styling */
+.email-frame {
+    border: 1px solid #ddd;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fefefe;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease-in-out;
+}
+
+    .email-frame:hover {
+        transform: scale(1.02);
+    }
+
+/* Header styling */
+.email-header {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Email info (From & To details) */
+.email-info {
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    color: #444;
+    border-radius: 0 0 10px 10px;
+}
+
+    .email-info p {
+        margin: 8px 0;
+        font-weight: 400;
+    }
+
+    .email-info span {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .email-info a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .email-info a:hover {
+            text-decoration: underline;
+        }
+
+/* Email body styling */
+.email-body {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+    .email-body p {
+        margin: 12px 0;
+    }
+
+/* Signature Styling */
+.signature {
+    margin-top: 20px;
+    font-weight: 500;
+    color: #444;
+}
+
+.team-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Strong text for emphasis */
+.email-body strong {
+    color: #d9534f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .email-frame {
+        padding: 15px;
+    }
+
+    .email-header {
+        font-size: 18px;
+    }
+
+    .email-body {
+        font-size: 14px;
+    }
+}
+
+.scrollable-container {
+    width: 100%;
+    height: 768px; /* Or any height you prefer */
+    overflow: auto; /* Enables scrolling */
+}

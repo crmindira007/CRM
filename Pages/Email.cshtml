@@ -11,176 +11,288 @@
         display: flex;
     }
 </style>
-    <div class="main-content-email">
-        <div class="flex-1">
-            <!-- sidebar_email -->
-            <div class="sidebar_email">
-                <div class="sidebar_email-item active">
-                    <i class="fas fa-inbox"></i>
-                    <span>Inbox</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-star"></i>
-                    <span>Starred</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-clock"></i>
-                    <span>Snoozed</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-paper-plane"></i>
-                    <span>Sent</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Drafts</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-trash"></i>
-                    <span>Trash</span>
-                </div>
-
-                <div class="sidebar_email-divider"></div>
-
-                <div class="sidebar_email-label">Labels</div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-tag" style="color: #fbbc04;"></i>
-                    <span>Work</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-tag" style="color: #34a853;"></i>
-                    <span>Personal</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-tag" style="color: #ea4335;"></i>
-                    <span>Important</span>
-                </div>
-                <div class="sidebar_email-item">
-                    <i class="fas fa-plus"></i>
-                    <span>Create new</span>
-                </div>
-
-                <div class="sidebar_email-divider"></div>
-
-                <div class="sidebar_email-item">
-                    <i class="fas fa-cog"></i>
-                    <span>Settings</span>
-                </div>
+<div class="main-content-email">
+    <div class="flex-1">
+        <!-- sidebar_email -->
+        <div class="sidebar_email">
+            <div class="sidebar_email-item active">
+                <i class="fas fa-inbox"></i>
+                <span>Inbox</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-star"></i>
+                <span>Starred</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-clock"></i>
+                <span>Snoozed</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-paper-plane"></i>
+                <span>Sent</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Drafts</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-trash"></i>
+                <span>Trash</span>
             </div>
 
-            <!-- Email List -->
-            <div class="email-list">
-                <div>
-                    <div class="text-sm font-semibold text-blue-600 mb-2">
-                        Today
+            <div class="sidebar_email-divider"></div>
+
+            <div class="sidebar_email-label">Labels</div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-tag" style="color: #fbbc04;"></i>
+                <span>Work</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-tag" style="color: #34a853;"></i>
+                <span>Personal</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-tag" style="color: #ea4335;"></i>
+                <span>Important</span>
+            </div>
+            <div class="sidebar_email-item">
+                <i class="fas fa-plus"></i>
+                <span>Create new</span>
+            </div>
+
+            <div class="sidebar_email-divider"></div>
+
+            <div class="sidebar_email-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+        </div>
+
+        <!-- Email List -->
+        <div class="email-list scrollable-container">
+            <div>
+                <div class="text-sm font-semibold text-blue-600 mb-2">
+                    Today
+                </div>
+                <div class="email-item" onclick="openEmail('email1.html')">
+                    <img alt="Profile picture of John Doe" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/GYA5awnFZEQhREWEs9IsZxwSzaasszOUSQOf4HbIlvM.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            John Doe
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            johndoe@example.com
+                        </div>
                     </div>
-                    <div class="email-item" onclick="openEmail('email1.html')">
-                        <img alt="Profile picture of John Doe" height="40"
-                             src="https://storage.googleapis.com/a1aa/image/GYA5awnFZEQhREWEs9IsZxwSzaasszOUSQOf4HbIlvM.jpg"
-                             width="40" />
-                        <div>
-                            <div class="font-semibold">
-                                John Doe
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                johndoe@example.com
-                            </div>
-                        </div>
-                        <div class="text-sm text-gray-700">
-                            Meeting at 3 PM
-                        </div>
-                    </div>
-                    <div class="email-item" onclick="openEmail('email2.html')">
-                        <img alt="Profile picture of Jane Smith" height="40"
-                             src="https://storage.googleapis.com/a1aa/image/QqMe2cyhLF2Ipx2ryimf3pXiGmpTGgEdxDdb77osxfk.jpg"
-                             width="40" />
-                        <div>
-                            <div class="font-semibold">
-                                Jane Smith
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                janesmith@example.com
-                            </div>
-                        </div>
-                        <div class="text-sm text-gray-700">
-                            Project update
-                        </div>
+                    <div class="text-sm text-gray-700">
+                        Meeting at 3 PM
                     </div>
                 </div>
-                <div>
-                    <div class="text-sm font-semibold text-blue-600 mb-2">
-                        Last week
-                    </div>
-                    <div class="email-item" onclick="openEmail('email3.html')">
-                        <img alt="Profile picture of Alice Johnson" height="40"
-                             src="https://storage.googleapis.com/a1aa/image/-qafyCJZgkhOtCDjQp9dLFW2XsxgjWtKuGGDW-67qDY.jpg"
-                             width="40" />
-                        <div>
-                            <div class="font-semibold">
-                                Alice Johnson
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                alicejohnson@example.com
-                            </div>
+                <div class="email-item" onclick="openEmail('email2.html')">
+                    <img alt="Profile picture of Jane Smith" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/QqMe2cyhLF2Ipx2ryimf3pXiGmpTGgEdxDdb77osxfk.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Jane Smith
                         </div>
-                        <div class="text-sm text-gray-700">
-                            Weekly report
+                        <div class="text-xs text-gray-500">
+                            janesmith@example.com
                         </div>
                     </div>
-                    <div class="email-item" onclick="openEmail('email4.html')">
-                        <img alt="Profile picture of Bob Brown" height="40"
-                             src="https://storage.googleapis.com/a1aa/image/fkVQ4W5Ci_QGBMzUw48qXbw2B1msTg5hGfYuBdipCL0.jpg"
-                             width="40" />
-                        <div>
-                            <div class="font-semibold">
-                                Bob Brown
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                bobbrown@example.com
-                            </div>
-                        </div>
-                        <div class="text-sm text-gray-700">
-                            Client feedback
-                        </div>
+                    <div class="text-sm text-gray-700">
+                        Project update
                     </div>
                 </div>
-                <div>
-                    <div class="text-sm font-semibold text-blue-600 mb-2">
-                        This month
-                    </div>
-                    <div class="email-item" onclick="openEmail('email5.html')">
-                        <img alt="Profile picture of Charlie Davis" height="40"
-                             src="https://storage.googleapis.com/a1aa/image/5BKxSOfSOaqfqwGQMWuR2eCaRXAGWjdaWfh8ePXB480.jpg"
-                             width="40" />
-                        <div>
-                            <div class="font-semibold">
-                                Charlie Davis
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                charliedavis@example.com
-                            </div>
+            </div>
+            <div>
+                <div class="text-sm font-semibold text-blue-600 mb-2">
+                    Last week
+                </div>
+                <div class="email-item" onclick="openEmail('email3.html')">
+                    <img alt="Profile picture of Alice Johnson" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/-qafyCJZgkhOtCDjQp9dLFW2XsxgjWtKuGGDW-67qDY.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Alice Johnson
                         </div>
-                        <div class="text-sm text-gray-700">
-                            Monthly newsletter
+                        <div class="text-xs text-gray-500">
+                            alicejohnson@example.com
                         </div>
                     </div>
-                    <div class="email-item" onclick="openEmail('email6.html')">
-                        <img alt="Profile picture of Dana White" height="40"
-                             src="https://storage.googleapis.com/a1aa/image/B2uscB0l9er0goHv5r4L5O7o45WPIshB7-RQ5MlPYZw.jpg"
-                             width="40" />
-                        <div>
-                            <div class="font-semibold">
-                                Dana White
-                            </div>
-                            <div class="text-xs text-gray-500">
-                                danawhite@example.com
-                            </div>
+                    <div class="text-sm text-gray-700">
+                        Weekly report
+                    </div>
+                </div>
+                <div class="email-item" onclick="openEmail('email4.html')">
+                    <img alt="Profile picture of Bob Brown" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/fkVQ4W5Ci_QGBMzUw48qXbw2B1msTg5hGfYuBdipCL0.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Bob Brown
                         </div>
-                        <div class="text-sm text-gray-700">
-                            Team outing
+                        <div class="text-xs text-gray-500">
+                            bobbrown@example.com
                         </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Client feedback
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="text-sm font-semibold text-blue-600 mb-2">
+                    This month
+                </div>
+                <div class="email-item" onclick="openEmail('email5.html')">
+                    <img alt="Profile picture of Charlie Davis" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/5BKxSOfSOaqfqwGQMWuR2eCaRXAGWjdaWfh8ePXB480.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Charlie Davis
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            charliedavis@example.com
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Monthly newsletter
+                    </div>
+                </div>
+                <div class="email-item" onclick="openEmail('email6.html')">
+                    <img alt="Profile picture of Dana White" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/B2uscB0l9er0goHv5r4L5O7o45WPIshB7-RQ5MlPYZw.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Dana White
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            danawhite@example.com
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Team outing
+                    </div>
+                </div>
+                <div class="email-item" onclick="openEmail('email6.html')">
+                    <img alt="Profile picture of Dana White" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/B2uscB0l9er0goHv5r4L5O7o45WPIshB7-RQ5MlPYZw.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Dana White
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            danawhite@example.com
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Team outing
+                    </div>
+                </div>
+                <div class="email-item" onclick="openEmail('email6.html')">
+                    <img alt="Profile picture of Dana White" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/B2uscB0l9er0goHv5r4L5O7o45WPIshB7-RQ5MlPYZw.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Dana White
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            danawhite@example.com
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Team outing
+                    </div>
+                </div>
+                <div class="email-item" onclick="openEmail('email6.html')">
+                    <img alt="Profile picture of Dana White" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/B2uscB0l9er0goHv5r4L5O7o45WPIshB7-RQ5MlPYZw.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Dana White
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            danawhite@example.com
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Team outing
+                    </div>
+                </div>
+                <div class="email-item" onclick="openEmail('email6.html')">
+                    <img alt="Profile picture of Dana White" height="40"
+                         src="https://storage.googleapis.com/a1aa/image/B2uscB0l9er0goHv5r4L5O7o45WPIshB7-RQ5MlPYZw.jpg"
+                         width="40" />
+                    <div>
+                        <div class="font-semibold">
+                            Dana White
+                        </div>
+                        <div class="text-xs text-gray-500">
+                            danawhite@example.com
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        Team outing
                     </div>
                 </div>
             </div>
         </div>
+        <div class="email-frame" id="email-content">
+            <div class="email-header">Subject: Meeting at 3 PM</div>
+            <div class="email-info">
+                <span>From:</span> John Doe (johndoe@example.com) <br>
+                <span>To:</span> You (your.email@example.com)
+            </div>
+            <div class="email-body">
+                <p>Hi,</p>
+                <p>This is a reminder about our meeting scheduled for 3 PM today. Please come prepared with the project updates.</p>
+                <p>Thanks,</p>
+                <p>Team</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show email content dynamically based on the email clicked
+        function showEmailContent(emailId) {
+            const emailContent = {
+                'email1': {
+                    subject: 'Meeting at 3 PM',
+                    from: 'John Doe (johndoe@example.com)',
+                    to: 'You (your.email@example.com)',
+                    body: 'Hi,\n\nThis is a reminder about our meeting scheduled for 3 PM today. Please come prepared with the project updates.\n\nThanks,\nTeam'
+                },
+                'email2': {
+                    subject: 'Project update',
+                    from: 'Jane Smith (janesmith@example.com)',
+                    to: 'You (your.email@example.com)',
+                    body: 'Hi,\n\nJust wanted to give you a quick update on the project. Everything is going well, and we will be sending the final report by the end of the week.\n\nBest,\nJane'
+                }
+            };
+
+            // Get the email data based on emailId and populate the email frame
+            const email = emailContent[emailId];
+            document.getElementById('email-content').innerHTML = `
+                <div class="email-header">Subject: ${email.subject}</div>
+                <div class="email-info">
+                    <span>From:</span> ${email.from} <br>
+                    <span>To:</span> ${email.to}
+                </div>
+                <div class="email-body">
+                    <p>${email.body.replace(/\n/g, '<br>')}</p>
+                </div>
+            `;
+        }
+    </script>
+
+</div>
     </div>
